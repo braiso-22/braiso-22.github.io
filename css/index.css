@@ -1,11 +1,69 @@
-/*
-    nice background and color
-*/
-body{
-    background-color: #f5f5f5;
-    color: #333;
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #f5f5f5;
+  color: #333;
 }
-img{
-    max-width: 100%;
-    height: 120px;
+img {
+  max-width: 100%;
+  height: 120px;
+}
+
+/* Estilos para la cabezera principal*/
+body > header {
+  top: 0;
+  height: 4em;
+  background-color: #333;
+  color: #fff;
+  padding: 0.7em;
+  position: fixed;
+  width: 100%;
+}
+
+body > header a {
+  padding: 0.4em;
+  color: #fff;
+  text-decoration: none;
+}
+
+body > header a:hover {
+  border-bottom: 0.2em solid #ffffff;
+}
+
+/* Estilos para el main content*/
+body > main {
+  margin: 6em 0 0 0;
+}
+
+/* Estilos para una barra lateral de navegación */
+ul.horizontalList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+ul.horizontalList div {
+  float: left;
+}
+
+ul.horizontalList div.right {
+  float: right;
+}
+
+ul.horizontalList li {
+  float: left;
+  margin: 1em;
+}
+
+ul.horizontalList li.left {
+  float: left;
+}
+
+/* Main content */
+
+.anchor {
+  display: block;
+  height: 5em; /* this is the height of your header */
+  margin-top: -5em; /* this is again negative value of the height of your header */
+  visibility: hidden;
 }
