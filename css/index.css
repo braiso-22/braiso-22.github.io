@@ -5,14 +5,12 @@ body {
   color: #333;
 }
 img {
-  max-width: 100%;
-  height: 120px;
+  max-height: 8em;
 }
 
 /* Estilos para la cabezera principal*/
 body > header {
   top: 0;
-  height: 4em;
   background-color: #333;
   color: #fff;
   padding: 0.7em;
@@ -28,11 +26,6 @@ body > header a {
 
 body > header a:hover {
   border-bottom: 0.2em solid #ffffff;
-}
-
-/* Estilos para el main content*/
-body > main {
-  margin: 6em 0 0 0;
 }
 
 /* Estilos para una barra lateral de navegación */
@@ -63,7 +56,5 @@ ul.horizontalList li.left {
 
 .anchor {
   display: block;
-  height: 5em; /* this is the height of your header */
-  margin-top: -5em; /* this is again negative value of the height of your header */
   visibility: hidden;
 }
