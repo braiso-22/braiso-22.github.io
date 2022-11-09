@@ -89,6 +89,7 @@ main > header {
 
 
 main > header h1 {
+  font-size:3em;
   text-align: center;
   font-family: myFirstFont;
   -webkit-text-stroke: 1px rgb(234, 255, 255);
