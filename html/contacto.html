@@ -13,8 +13,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
   <body>
-    <script type="module" src="../js/firebase/app.js">
-    </script>
     <header>
       <nav>
         <ul class="horizontalList">
@@ -28,12 +26,30 @@
             <li><a href="../index.html#Aprendiendo">Aprendiendo</a></li>
             <li><a href="../index.html#Titulos">Títulos</a></li>
             <li>
-              <a href="https://github.com/braiso-22" target="_blank">Github</a>
+              <a id="githubLink" href="https://github.com/braiso-22" target="_blank">Github</a>
             </li>
             <li><a href="#">Contacto</a></li>
           </div>
         </ul>
       </nav>
     </header>
+    <main id="contacto">
+      <header class="bg">
+        <div id="app">
+          <button id="button-login">Login con Google</button>
+          <button id="button-logout">Logout</button>
+          <form id="login-form">
+            <div id="user-info"></div>
+            <input
+              type="text"
+              id="message-input"
+              placeholder="Nuevo mensaje"
+              autocomplete="off"
+            />
+          </form>
+        </div>
+      </header>
+    </main>
+    <script type="module" src="../js/firebase/app.js"></script>
   </body>
 </html>
