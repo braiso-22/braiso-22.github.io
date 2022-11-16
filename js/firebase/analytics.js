@@ -3,6 +3,6 @@ import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/9.14.
 
 const analytics = getAnalytics(app);
 
-export function logPageView(pageName) {
+export function logView(pageName) {
     logEvent(analytics, pageName);
 }
