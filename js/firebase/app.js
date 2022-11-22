@@ -1,5 +1,9 @@
 import { logView } from "./analytics.js";
-import { signInWithGoogle, signOutUser} from "./auth.js";
+import {
+  signInWithGoogle,
+  signOutUser,
+  onAuthStateChangedImp,
+} from "./auth.js";
 
 $(document).ready(function () {
   var pageName = $(this).attr("id");
@@ -18,9 +22,14 @@ $(document).ready(function () {
     logEvent("Signout Button Clicked");
     signOutUser();
   });
-
+  onAuthStateChangedImp(change);
 });
 
 function logEvent(eventName) {
   logView("Event: " + eventName);
+}
+
+function change(toHide, toShow) {
+  $(toHide).addClass("hidden");
+  $(toShow).removeClass("hidden");
 }

@@ -4,6 +4,7 @@ import {
   signInWithPopup,
   signInWithRedirect,
   GoogleAuthProvider,
+  onAuthStateChanged,
   signOut,
 } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
 
@@ -19,7 +20,7 @@ export function signInWithGoogle() {
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const token = credential.accessToken;
       // The signed-in user info.
-      const user = result.user;
+      const user = result.user.auth.currentUser;
       console.log({ user });
     })
     .catch((error) => {
@@ -42,4 +43,19 @@ export function signOutUser() {
     .catch((error) => {
       console.log({ "Error signing out": error });
     });
+}
+
+//const estados = { unknow: 0, authenticated: 1, notAuth: 2 };
+
+
+export function onAuthStateChangedImp(updateUI) {
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+        // User is signed in, see docs for a list of available properties
+        updateUI("#button-login", "#button-signout");
+    } else {
+        // User is signed out
+        updateUI("#button-signout", "#button-login");
+    }
+  });
 }
