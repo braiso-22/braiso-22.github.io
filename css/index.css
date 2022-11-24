@@ -3,7 +3,7 @@
   src: url(../assets/fonts/FastHand.otf);
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -150,6 +150,34 @@ body > footer {
   color: #fff;
 }
 
+body > footer a {
+  padding: 0.5em;
+  background-color: #fff;
+  /* round border*/
+  border-radius: 0.5em;
+  /* link decoration none*/
+  text-decoration: none;
+  color: #333;
+}
+
+footer a > img {
+  height: 1em;
+  vertical-align: middle;
+}
+
+div table,
+div tbody,
+div tr {
+  margin: auto;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  width: 30%;
+  text-align: center;
+}
+
 /* Contacto */
 .hidden {
   display: none;
@@ -167,7 +195,7 @@ button {
   cursor: pointer;
   box-shadow: 0 1px 3px hsla(209, 100%, 75%, 0.06),
     0 2px 6px hsla(209, 100%, 75%, 0.06), 0 3px 8px hsla(209, 100%, 75%, 0.06);
-    left:50%;
+  left: 50%;
 }
 
 #button-login:hover {
@@ -198,14 +226,14 @@ button {
   color: rgba(255, 255, 255);
 }
 
-main > div.bg{
+main > div.bg {
   height: 100vh;
   margin: auto;
   padding: 10px 0;
   height: 100vh;
 }
 
-main > div.bg > article{
+main > div.bg > article {
   background-color: rgb(241, 255, 241);
   box-shadow: 0 1px 3px hsla(209, 100%, 75%, 0.06),
     0 2px 6px hsla(209, 100%, 75%, 0.06), 0 3px 8px hsla(209, 100%, 75%, 0.06);
@@ -213,7 +241,6 @@ main > div.bg > article{
   width: 85vw;
   height: 50%;
   margin: auto;
-  
 }
 
 article#app {
