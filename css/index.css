@@ -243,6 +243,11 @@ main > div.bg > article {
   margin: auto;
 }
 
+div.bg > article > section {
+  width: 60vw;
+  margin: auto;
+}
+
 article#app {
   padding: 1em;
   text-align: justify;
