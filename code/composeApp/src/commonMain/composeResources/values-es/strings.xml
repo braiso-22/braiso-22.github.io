@@ -1,0 +1,11 @@
+<resources>
+    <string name="full_stack_developer">Desarrollador Full Stack</string>
+    <string name="email_copied">Email copiado en el portapapeles</string>
+    <string name="about_me">Sobre mi</string>
+    <string name="about_me1">Soy un desarrollador apasionado por el código limpio y comprometido con la creación de software de alta calidad. Con experiencia en arquitecturas MVVM, MVI y MVC, estoy especializado en desarrollo móvil utilizando tecnologías modernas como Jetpack Compose, Kotlin y herramientas como Retrofit, Room y Dagger Hilt.</string>
+    <string name="about_me2">Mi enfoque profesional se centra en fomentar las mejores prácticas y ayudar a los equipos a mantener una estructura clara y escalable en sus proyectos. Valoro la colaboración y siempre busco optimizar los procesos para garantizar un código limpio y mantenible.</string>
+    <string name="about_me3">Aunque mi punto fuerte es el desarrollo móvil, soy flexible y tengo curiosidad por trabajar en distintos entornos de programación y enfrentarme a nuevos retos tecnológicos.</string>
+    <string name="my_stack">Tecnologías que manejo</string>
+    <string name="mobile">Móvil</string>
+    <string name="other">Otras</string>
+</resources>
