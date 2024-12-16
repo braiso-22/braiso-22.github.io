@@ -21,39 +21,6 @@ import myiconpack.Linkedin
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun ProfileInfo(
-    onEvent: (Event) -> Unit,
-    modifier: Modifier = Modifier,
-) {
-    Row(
-        horizontalArrangement = Arrangement.Center,
-        modifier = modifier,
-    ) {
-        ProfileImage(
-            modifier = Modifier.padding(smallPadding),
-        )
-        Spacer(Modifier.padding(smallPadding))
-        ProfileDetails(onEvent)
-    }
-}
-
-@Composable
-fun ProfileDetails(onEvent: (Event) -> Unit) {
-    Column {
-        Text(
-            text = "Brais Fernández Vázquez",
-            style = MaterialTheme.typography.titleLarge
-        )
-        Spacer(Modifier.padding(verySmallPadding))
-        Text(stringResource(Res.string.full_stack_developer), style = MaterialTheme.typography.titleMedium)
-        Spacer(Modifier.padding(verySmallPadding))
-        LocationInfo()
-        Spacer(Modifier.padding(verySmallPadding))
-        SocialLinks(onEvent)
-    }
-}
-
-@Composable
 fun LocationInfo() {
     Row(verticalAlignment = Alignment.CenterVertically) {
         Icon(imageVector = Icons.Default.LocationOn, contentDescription = "Location Icon")
@@ -62,16 +29,17 @@ fun LocationInfo() {
     }
 }
 
-@OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun SocialLinks(onEvent: (Event) -> Unit) {
-    FlowRow(
+fun SocialLinks(
+    onEvent: (Event) -> Unit,
+) {
+    Row(
         horizontalArrangement = Arrangement.spacedBy(smallPadding),
     ) {
         SocialButton(
             onClick = { onEvent(Event.ClickEmail) },
             icon = Icons.Default.Mail,
-            text = "braisfv22@gmail.com"
+            text = "braisfv22@gmail.com",
         )
         SocialButton(
             onClick = { onEvent(Event.ClickCv) },
@@ -89,6 +57,42 @@ fun SocialLinks(onEvent: (Event) -> Unit) {
             icon = MyIconPack.Github,
             outlined = true,
         )
+
+    }
+}
+
+
+@Composable
+fun CompactSocialLinks(
+    onEvent: (Event) -> Unit,
+) {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        SocialButton(
+            onClick = { onEvent(Event.ClickEmail) },
+            icon = Icons.Default.Mail,
+            text = "braisfv22@gmail.com",
+        )
+        Row(horizontalArrangement = Arrangement.spacedBy(smallPadding)) {
+            SocialButton(
+                onClick = { onEvent(Event.ClickCv) },
+                icon = Icons.Default.Description,
+                text = "CV",
+                outlined = true,
+            )
+            SocialButton(
+                onClick = { onEvent(Event.ClickLinkedin) },
+                icon = MyIconPack.Linkedin,
+                outlined = true,
+            )
+            SocialButton(
+                onClick = { onEvent(Event.ClickGithub) },
+                icon = MyIconPack.Github,
+                outlined = true,
+            )
+        }
+
     }
 }
 
@@ -98,13 +102,14 @@ fun SocialButton(
     onClick: () -> Unit,
     text: String? = null,
     outlined: Boolean = false,
+    modifier: Modifier = Modifier,
 ) {
     if (outlined) {
-        OutlinedButton(onClick = onClick) {
+        OutlinedButton(onClick = onClick, modifier = modifier) {
             SocialContent(icon, text)
         }
     } else {
-        Button(onClick = onClick) {
+        Button(onClick = onClick, modifier = modifier) {
             SocialContent(icon, text)
         }
     }

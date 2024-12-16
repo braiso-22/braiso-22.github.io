@@ -36,6 +36,8 @@ kotlin {
             implementation(compose.material)
             implementation(compose.material3)
             implementation(compose.materialIconsExtended)
+
+            implementation("org.jetbrains.compose.material3:material3-window-size-class:1.7.1")
             implementation("org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose:2.8.2")
 
             implementation(compose.ui)

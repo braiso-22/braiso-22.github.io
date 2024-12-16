@@ -1,39 +1,40 @@
 package com.braiso_22.web.main_page
 
-import MyIconPack
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.DarkMode
 import androidx.compose.material.icons.filled.LightMode
 import androidx.compose.material3.*
+import androidx.compose.material3.windowsizeclass.WindowSizeClass
+import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.AnnotatedString
-import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.braiso_22.web.main_page.about_me.AboutMe
-import com.braiso_22.web.main_page.profile_info.ProfileInfo
+import com.braiso_22.web.main_page.profile_info.CompactProfileInfo
+import com.braiso_22.web.main_page.profile_info.ExpandedProfileInfo
+import com.braiso_22.web.main_page.profile_info.MediumProfileInfo
+import com.braiso_22.web.main_page.stack.ExpandedMyStack
 import com.braiso_22.web.main_page.stack.MyStack
 import com.braiso_22.web.theme.mediumPadding
-import com.braiso_22.web.theme.smallPadding
-import com.braiso_22.web.theme.verySmallPadding
 import kotlinx.coroutines.flow.collectLatest
-import myiconpack.Android
-import org.jetbrains.compose.resources.DrawableResource
-import org.jetbrains.compose.resources.imageResource
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainPage(
     isDarkMode: Boolean,
+    sizeClass: WindowSizeClass,
     setIsDarkMode: () -> Unit,
 ) {
     val snackbarHostState = remember { SnackbarHostState() }
@@ -103,19 +104,49 @@ fun MainPage(
                 rememberScrollState()
             )
         ) {
-            Card(
-                modifier = Modifier.fillMaxWidth(0.75f).padding(mediumPadding)
+            val fraction = if (sizeClass.widthSizeClass == WindowWidthSizeClass.Expanded)
+                0.85f
+            else
+                1f
+
+            Column(
+                modifier = Modifier.fillMaxWidth(fraction)
             ) {
-                ProfileInfo(
-                    onEvent = { viewmodel.onEvent(it) },
-                    modifier = Modifier.padding(mediumPadding),
-                )
-            }
-            Card(modifier = Modifier.fillMaxWidth(0.75f).padding(mediumPadding)) {
-                AboutMe(Modifier.padding(mediumPadding))
-            }
-            Card(modifier = Modifier.fillMaxWidth(0.75f).padding(mediumPadding)) {
-                MyStack(Modifier.padding(mediumPadding))
+                val cardModifier = Modifier.fillMaxWidth().padding(mediumPadding)
+                Card(modifier = cardModifier) {
+                    when (sizeClass.widthSizeClass) {
+                        WindowWidthSizeClass.Compact -> {
+                            CompactProfileInfo(
+                                onEvent = { viewmodel.onEvent(it) },
+                                modifier = cardModifier,
+                            )
+                        }
+
+                        WindowWidthSizeClass.Medium -> {
+                            MediumProfileInfo(
+                                onEvent = { viewmodel.onEvent(it) },
+                                modifier = cardModifier,
+                            )
+                        }
+
+                        WindowWidthSizeClass.Expanded -> {
+                            ExpandedProfileInfo(
+                                onEvent = { viewmodel.onEvent(it) },
+                                modifier = Modifier.padding(mediumPadding),
+                            )
+                        }
+                    }
+                }
+                Card(modifier = cardModifier) {
+                    AboutMe(Modifier.padding(mediumPadding))
+                }
+                Card(modifier = cardModifier) {
+                    if (sizeClass.widthSizeClass == WindowWidthSizeClass.Expanded) {
+                        ExpandedMyStack(Modifier.padding(mediumPadding))
+                    } else {
+                        MyStack(Modifier.padding(mediumPadding))
+                    }
+                }
             }
         }
     }
