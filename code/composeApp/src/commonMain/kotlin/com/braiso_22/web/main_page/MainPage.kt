@@ -6,9 +6,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.DarkMode
-import androidx.compose.material.icons.filled.LightMode
 import androidx.compose.material3.*
 import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
@@ -22,9 +19,6 @@ import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.AnnotatedString
 import androidx.lifecycle.viewmodel.compose.viewModel
 import braiso_22.composeapp.generated.resources.*
-import braiso_22.composeapp.generated.resources.Res
-import braiso_22.composeapp.generated.resources.cwellt
-import braiso_22.composeapp.generated.resources.cwellt_description
 import com.braiso_22.web.main_page.about_me.AboutMe
 import com.braiso_22.web.main_page.common.DarkModeButton
 import com.braiso_22.web.main_page.experience.Experience
