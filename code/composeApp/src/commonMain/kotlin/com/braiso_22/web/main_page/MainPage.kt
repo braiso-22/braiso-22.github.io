@@ -26,6 +26,7 @@ import braiso_22.composeapp.generated.resources.Res
 import braiso_22.composeapp.generated.resources.cwellt
 import braiso_22.composeapp.generated.resources.cwellt_description
 import com.braiso_22.web.main_page.about_me.AboutMe
+import com.braiso_22.web.main_page.common.DarkModeButton
 import com.braiso_22.web.main_page.experience.Experience
 import com.braiso_22.web.main_page.experience.Job
 import com.braiso_22.web.main_page.profile_info.CompactProfileInfo
@@ -79,17 +80,7 @@ fun MainPage(
                     IconButton(
                         onClick = setIsDarkMode,
                     ) {
-                        Icon(
-                            // shows failing in some ides but it's fine
-                            imageVector = if (isDarkMode)
-                                Icons.Default.LightMode
-                            else
-                                Icons.Default.DarkMode,
-                            if (isDarkMode)
-                                "Activate Light Mode"
-                            else
-                                "Activate Dark Mode",
-                        )
+                        DarkModeButton(isDarkMode)
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
