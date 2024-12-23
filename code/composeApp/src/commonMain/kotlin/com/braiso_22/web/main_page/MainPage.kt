@@ -21,7 +21,13 @@ import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.AnnotatedString
 import androidx.lifecycle.viewmodel.compose.viewModel
+import braiso_22.composeapp.generated.resources.*
+import braiso_22.composeapp.generated.resources.Res
+import braiso_22.composeapp.generated.resources.cwellt
+import braiso_22.composeapp.generated.resources.cwellt_description
 import com.braiso_22.web.main_page.about_me.AboutMe
+import com.braiso_22.web.main_page.experience.Experience
+import com.braiso_22.web.main_page.experience.Job
 import com.braiso_22.web.main_page.profile_info.CompactProfileInfo
 import com.braiso_22.web.main_page.profile_info.ExpandedProfileInfo
 import com.braiso_22.web.main_page.profile_info.MediumProfileInfo
@@ -29,6 +35,8 @@ import com.braiso_22.web.main_page.stack.ExpandedMyStack
 import com.braiso_22.web.main_page.stack.MyStack
 import com.braiso_22.web.theme.mediumPadding
 import kotlinx.coroutines.flow.collectLatest
+import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -146,6 +154,41 @@ fun MainPage(
                     } else {
                         MyStack(Modifier.padding(mediumPadding))
                     }
+                }
+                Card(modifier = cardModifier) {
+
+                    val jobs = listOf(
+                        Job(
+                            companyName = "Cwellt Software",
+                            companyLogo = painterResource(Res.drawable.cwellt),
+                            companyTasks = listOf(
+                                Res.string.cwellt_cache,
+                                Res.string.cwellt_react,
+                                Res.string.cwellt_mobile,
+                            ).map { stringResource(it) },
+                            jobPosition = stringResource(Res.string.full_stack_developer),
+                            workedYears = "oct 2023 - act",
+                            description = stringResource(Res.string.cwellt_description),
+                        ),
+                        Job(
+                            companyName = "Ntt Data",
+                            companyLogo = painterResource(Res.drawable.nttdata),
+                            companyTasks = listOf(
+                                Res.string.nttdata_mvc_pattern,
+                                Res.string.nttdata_api_rest,
+                                Res.string.nttdata_db,
+                                Res.string.nttdata_general_tools,
+                            ).map { stringResource(it) },
+                            jobPosition = stringResource(Res.string.full_stack_developer),
+                            workedYears = "mar 22 - oct 23",
+                            description = stringResource(Res.string.nttdata_description),
+                        )
+                    )
+
+                    Experience(
+                        jobs = jobs,
+                        isCompact = sizeClass.widthSizeClass == WindowWidthSizeClass.Compact
+                    )
                 }
             }
         }

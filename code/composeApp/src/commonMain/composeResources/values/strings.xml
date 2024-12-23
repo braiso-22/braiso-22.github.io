@@ -8,4 +8,16 @@
     <string name="my_stack">My Stack</string>
     <string name="mobile">Mobile</string>
     <string name="other">Other</string>
+    <string name="experience">Experience</string>
+    <string name="nttdata_description">During my time at NTT Data, I participated in key public and healthcare sector projects, such as CRM100, OBSAMU, and Valtermed, focused on Galicia and Asturias. My role centered on developing applications and systems, with a focus on technologies like Java, PHP, JavaScript, MySQL, and Oracle Database.</string>
+    <string name="nttdata_experience_result">This experience allowed me to apply agile methodologies, strengthen teamwork, and learn about messaging and event queuing systems.</string>
+    <string name="dev_mvc_pattern">Development of features usign java spring boot with mvc pattern.</string>
+    <string name="dev_api_rest">Design and implementation of REST APIs.</string>
+    <string name="dev_db">Database management and query optimization.</string>
+    <string name="nttdata_general_tools">Use of tools like Git, Docker, OKD, and JIRA for version control, deployment, and task tracking.</string>
+    <string name="cwellt_description">Currently, I work at Cwellt as a Mobile and FullStack Developer, contributing to projects related to airline flight and personnel management. Notable projects include WinOps (web and backend), WinOps Employee, WinOps EFB, and WinOps ECB.</string>
+    <string name="cwellt_cache">Backend optimization: Research and implementation of a caching system to improve performance in web services.</string>
+    <string name="cwellt_react">Frontend development: Creation of React components focused on optimizing user experience and client performance.</string>
+    <string name="cwellt_mobile">Mobile app migration: I performed a complete migration of WinOps Employee from Xamarin to Native Android, using Kotlin and Jetpack Compose to modernize the app and improve maintenance.</string>
+    <string name="main_tasks">My main tasks where:</string>
 </resources>

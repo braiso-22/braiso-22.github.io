@@ -8,4 +8,16 @@
     <string name="my_stack">Tecnologías que manejo</string>
     <string name="mobile">Móvil</string>
     <string name="other">Otras</string>
+    <string name="experience">Experiencia</string>
+    <string name="nttdata_description">Durante mi tiempo en NTT Data, participé en proyectos clave del sector público y sanitario, como CRM100, OBSAMU y Valtermed, enfocados en Galicia y Asturias. Mi rol se centró en el desarrollo de aplicaciones y sistemas, destacando el uso de tecnologías como Java, PHP, JavaScript, MySQL y Oracle Database.</string>
+    <string name="nttdata_experience_result">Esta experiencia me permitió aplicar metodologías ágiles, fortalecer el trabajo en equipo y aprender sobre sistemas de mensajería y encolado de eventos.</string>
+    <string name="nttdata_mvc_pattern">Desarrollo de funcionalidades en java spring boot con arquitectura MVC.</string>
+    <string name="nttdata_api_rest">Diseño e implementación de APIs REST.</string>
+    <string name="nttdata_db">Gestión de bases de datos y optimización de consultas.</string>
+    <string name="nttdata_general_tools">Uso de herramientas como Git, Docker, OKD y JIRA para control de versiones, despliegue y seguimiento de tareas.</string>
+    <string name="cwellt_description">Actualmente trabajo en Cwellt como Programador Mobile y FullStack, colaborando en proyectos relacionados con la gestión de vuelos y personal de aerolíneas. Entre los proyectos destacados se encuentran WinOps (web y backend), WinOps Employee, WinOps EFB y WinOps ECB.</string>
+    <string name="cwellt_cache">Optimización del backend: Investigación e implementación de un sistema de caché para mejorar el rendimiento en los servicios web.</string>
+    <string name="cwellt_react">Desarrollo frontend: Creación de componentes React enfocados en optimizar la experiencia del usuario y el rendimiento en el cliente.</string>
+    <string name="cwellt_mobile">Migración de aplicaciones móviles: Realicé una migración completa de WinOps Employee desde Xamarin a Android Nativo, utilizando Kotlin y Jetpack Compose para modernizar la app y mejorar su mantenimiento.</string>
+    <string name="main_tasks">Mis principales tareas fueron:</string>
 </resources>
